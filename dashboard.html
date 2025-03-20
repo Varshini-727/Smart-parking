@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="mb-4">Welcome, {{ session.get('username', 'User') }}!</h2>
+        <p class="lead">Select the area you wish to park:</p>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Area 1</h5>
+                    <p class="card-text">Find the best parking spot in Area 1.</p>
+                    <a href="{{ url_for('area', area_name='area1') }}" class="btn btn-primary">Go to Area 1</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Area 2</h5>
+                    <p class="card-text">Check availability in Area 2 for parking.</p>
+                    <a href="{{ url_for('area', area_name='area2') }}" class="btn btn-primary">Go to Area 2</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Area 3</h5>
+                    <p class="card-text">Explore parking options in Area 3.</p>
+                    <a href="{{ url_for('area', area_name='area3') }}" class="btn btn-primary">Go to Area 3</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Section -->
+    <div class="text-center mt-4">
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+    </div>
+</div>
+{% endblock %}

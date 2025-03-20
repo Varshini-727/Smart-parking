@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ area_name | capitalize }}{% endblock %}
+{% block content %}
+<div class="container mt-5 text-center">
+    <!-- Header Section -->
+    <h2 class="mb-4">{{ area_name | capitalize }}</h2>
+
+    <!-- Video Section -->
+    <div class="position-relative d-inline-block">
+        <video width="640" height="360" autoplay muted loop class="border border-dark rounded">
+            <source src="{{ url_for('static', filename=area_name + '.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Live Footage Caption -->
+        <div class="position-absolute top-0 end-0 p-2 bg-danger text-white rounded-start" style="font-weight: bold; font-size: 1rem;">
+            Live Footage
+        </div>
+    </div>
+
+    <!-- Back to Dashboard Button -->
+    <div class="mt-4">
+        <a href="{{ url_for('dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}

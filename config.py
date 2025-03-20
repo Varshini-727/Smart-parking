@@ -1,0 +1,1 @@
+MONGO_URI = "mongodb+srv://josephpeterjece2021:AJ9Hg6xTtQBUCoGr@cluster1.xaacunv.mongodb.net/AttendanceManagementSystem?retryWrites=true&w=majority"
